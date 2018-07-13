@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>JavascriptでTab切り替え</h1>
+  <section class="tab_container">
+    <ul class="tab_list">
+      <li><a href="#" class="tab_list_menu active" data-id="tab1">TAB1</a></li>
+      <li><a href="#" class="tab_list_menu" data-id="tab2">TAB2</a></li>
+      <li><a href="#" class="tab_list_menu" data-id="tab3">TAB3</a></li>
+    </ul>
+    <div class="tab_contents active" id="tab1">
+      <p><strong>About PomPomPurin 1</strong></p>
+      <p>
+        こげ茶色のベレー帽がトレードマークの、ゴールデンレトリバーの男のコ。<br>
+        のんびり屋で、好きな言葉は「おでかけ」、嫌いな言葉は「おるすばん」。
+      </p>
+      <p><img src="img/img1.jpg" alt="image1"></p>
+    </div>
+    <div class="tab_contents" id="tab2">
+        <p><strong>About PomPomPurin 2</strong></p>
+        <p>
+          くつ集めが趣味。飼い主のお父さんの革ぐつ、お母さんのサンダルなど、片っぽずつ、こっそり隠している。
+          ミルクと、ふにゃふにゃしたものと、ママが作ったプリンが好き。特技は、お昼寝とプリン体操。
+          誰とでも仲良くなれちゃうこと。
+        </p>
+        <p><img src="img/img2.jpg" alt="image2"></p>
+    </div>
+    <div class="tab_contents" id="tab3">
+        <p><strong>PomPomPurin 3</strong></p>
+        <p>将来の夢は、もっともっとおっきくなること。飼い主のお姉さんの家の玄関にあるプリン用バスケットがお家。</p>
+        <p>誕生日：4月16日のお天気いい日</p>
+        <p><img src="img/img3.jpg" alt="image3"></p>
+    </div>
+  </section>
+
+<script async>
+  (function() {
+  let tabItems = document.getElementsByClassName('tab_list_menu');
+  //tabItems て名前をつけた変数は, documentはwebサイトの内容(HTML), class「tab_list_menu」を取得
+  let contents = document.getElementsByClassName('tab_contents');
+  //div class="tab_contents"についての設定 - contents と名前をつけた変数はwebサイトからclass「tab_contents」を取得
+
+  let i;//変数iを新規作成
+          
+  for (i = 0; i < tabItems.length; i++) { //tabを使う時のお約束
+      //forは繰り返し　変数iを0に初期化,継続条件が「iが変数tabItemsの数より小さい」が真の間,以下をくりかえす
+  tabItems[i].addEventListener('click', function(e) { 
+      //addEventListnerで呼び出す関数（クリックしたらeする）を設定、変数iを1増やす
+      e.preventDefault();//eという変数の既定の動作を止める ※aをリンクさせないようにする
+
+      let i; //変数iを作る　繰り返しループ用に必要　
+
+      for (i = 0; i < tabItems.length; i++) { 
+      tabItems[i].className = 'tab_list_menu';//active がつかないように menu_itemだけ設定 activeを削除
+      }
+
+      this.className = 'tab_list_menu active';//classを"menu_item active"にする
+
+      for (i = 0; i < contents.length; i++) { 
+      contents[i].className = 'tab_contents';//active がつかないように tab_contentsだけ設定 activeを削除
+      }
+
+      document.getElementById(this.dataset.id).className = 'tab_contents active'; 
+      //.dataset で data-idがついてるもの全てを取得して　それのclassNameを「content active」にする。
+
+  });
+  }
+
+  })();
+</script>
+</body>
+</html>

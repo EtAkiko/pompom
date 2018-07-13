@@ -1,0 +1,59 @@
+/* line 3, style.scss */
+body {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: #E9D8A8; }
+
+/* line 10, style.scss */
+section, div, p, ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/* line 16, style.scss */
+h1 {
+  margin: 0;
+  padding: 8px 0 8px 12px;
+  background: #FFFDF8;
+  color: #743530; }
+
+/* line 23, style.scss */
+.tab-content {
+  display: block;
+  padding: 1rem 1rem 0 1rem; }
+  /* line 27, style.scss */
+  .tab-content__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FDFCF7; }
+  /* line 34, style.scss */
+  .tab-content__item {
+    font-size: 2rem;
+    color: white;
+    background-color: gray;
+    border-bottom: .2rem solid black;
+    width: 47.2vw; }
+    /* line 41, style.scss */
+    .tab-content__item--active {
+      background-color: aqua;
+      border-top: .2rem solid black;
+      border-left: .2rem solid black;
+      border-bottom: none;
+      border-right: .2rem solid black; }
+
+/* line 57, style.scss */
+.list--active {
+  display: block; }
+/* line 61, style.scss */
+.list--inactive {
+  display: none; }
+/* line 65, style.scss */
+.list__items {
+  box-sizing: content-box;
+  border-bottom: .2rem solid black;
+  border-left: .2rem solid black;
+  border-right: .2rem solid black;
+  padding: 1rem; }

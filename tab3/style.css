@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+body {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background:#81d4cb;  
+}
+section, div, p, ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+  margin: 0;
+  padding: 8px 0 8px 12px;
+  background: #dbf5f2;
+}
+section.tab_container {
+  background: #fff;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+section.tab_container img {
+  width: 50%;
+}
+ul.tab_list {
+  list-style: none;
+  width: 100%;
+  font-size: 0;/* liを横に並べた時の隙間を消す */
+}
+ul.tab_list li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width : 33.33333% ; /* 未対応ブラウザ用フォールバック */
+  width : -webkit-calc(100% / 3) ;
+  width : calc(100% / 3) ;
+  font-size: 14px;
+}
+
+ul.tab_list li a {
+  padding: 12px;
+  display: block;
+  box-sizing: border-box;
+  background: #dbf5f2;
+  color: #bfbfbf;
+}
+ul.tab_list li a.active {
+  background: #8bd9d9;
+  color: #333333;
+  text-decoration: none;
+}
+
+.tab_contents {
+  padding: 10px;
+  font-size: 16px;
+  display: none;
+  line-height: 1.4;
+}
+.tab_contents p {
+  margin: 10px;
+}
+.tab_contents.active {
+  display: block;
+}

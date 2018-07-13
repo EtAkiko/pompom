@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>JavascriptでTab切り替えその2</h1>
+
+<!-- tab_1 -->
+<section class="tab-content">
+  <!-- tabのボタン部分 -->
+  <ul class="tab-content__items">
+    <li index="0" class="tab-content__item tab-content__item--active">tab1</li>
+    <li index="1" class="tab-content__item">tab2</li>
+    <li index="2" class="tab-content__item">tab3</li>
+  </ul>
+  <!-- tabがアクティブのときの表示部分 -->
+  <div class="list list--tab">
+    <div class="list__items">
+      <div class="list__item list--active">
+        <ul>
+          <li><a href="">ポムポムプリンについて</a></li>
+          <li><a href="">ポムポムプリンのお友だち</a></li>
+          <li><a href="">ポムポムプリンカフェについて</a></li>
+        </ul>
+      </div>
+      <div class="list__item list--inactive">
+        <p>おはよう～♪キラキラな夏にあいさつをして、さぁ７月がはじまるよ☆</p>
+        <img src="img/july_pom.jpg" alt="pompomPurin">
+      </div>
+      <div class="list__item list--inactive">
+        <p>温泉旅館といえば、やっぱりこれをしなくちゃね～♪</p>
+        <img src="img/july_pom2.jpg" alt="pompomPurin2">
+      </div>
+    </div>
+  </div>
+</section> <!-- tab1 end -->
+
+<!-- tab_2 -->
+<section class="tab-content">
+  <!-- tabのボタン部分 -->
+  <ul class="tab-content__items">
+    <li index="0" class="tab-content__item tab-content__item--active">tab1</li>
+    <li index="1" class="tab-content__item">tab2</li>
+    <li index="2" class="tab-content__item">tab3</li>
+  </ul>
+  <!-- tabがアクティブのときの表示部分 -->
+  <div class="list list--tab">
+    <div class="list__items">
+      <div class="list__item list--active">
+        tab1_list<br>
+        tab1_list<br>
+        tab1_list<br>
+        tab1_list<br>
+        tab1_list<br>
+        tab1_list
+      </div>
+      <div class="list__item list--inactive">
+        tab2_list<br>
+        tab2_list<br>
+        tab2_list<br>
+        tab2_list<br>
+        tab2_list<br>
+        tab2_list
+      </div>
+      <div class="list__item list--inactive">
+        tab3_list<br>
+        tab3_list<br>
+        tab3_list<br>
+        tab3_list<br>
+        tab3_list<br>
+        tab3_list
+      </div>
+    </div>
+  </div>
+</section> <!-- tab2 end -->
+
+<script src="tab4.js" async></script>
+
+</body>
+</html>

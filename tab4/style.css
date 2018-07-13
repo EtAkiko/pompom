@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/* line 3, style.scss */
+body {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: #E9D8A8;
+  font-family: "Rounded Mplus 1c"; }
+
+/* line 11, style.scss */
+section, div, p, ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none; }
+
+/* line 17, style.scss */
+a {
+  color: #743530; }
+
+/* line 20, style.scss */
+img {
+  width: 100%;
+  vertical-align: bottom; }
+
+/* line 24, style.scss */
+h1 {
+  margin: 0;
+  padding: 8px 0 8px 12px;
+  background: #FFFDF8;
+  color: #743530; }
+
+/* line 31, style.scss */
+.tab-content {
+  display: block;
+  padding: 18px; }
+  /* line 35, style.scss */
+  .tab-content__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center; }
+  /* line 41, style.scss */
+  .tab-content__item {
+    font-size: 1rem;
+    color: #925F45;
+    background-color: #FEF7B4;
+    border-bottom: 3px solid #733A33;
+    width: 33.33333%;
+    width: -webkit-calc(100% / 3);
+    width: calc(100% / 3);
+    padding: 10px 0; }
+    /* line 51, style.scss */
+    .tab-content__item--active {
+      background-color: #925F45;
+      border: 3px solid #733A33;
+      border-bottom: none;
+      color: white; }
+
+/*Tabの中身*/
+/* line 61, style.scss */
+.list--tab {
+  background: #FDFCF7; }
+/* line 65, style.scss */
+.list--active {
+  display: block; }
+/* line 68, style.scss */
+.list--inactive {
+  display: none; }
+/* line 71, style.scss */
+.list__items {
+  box-sizing: content-box;
+  border: 3px solid #733A33;
+  border-top: none; }
+/* line 78, style.scss */
+.list__item ul {
+  width: 100%; }
+  /* line 80, style.scss */
+  .list__item ul li {
+    border-bottom: 1px solid #733A33; }
+    /* line 82, style.scss */
+    .list__item ul li a {
+      display: block;
+      padding: 10px;
+      position: relative; }
+    /* line 87, style.scss */
+    .list__item ul li a::after {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-top: #733A33 2px solid;
+      border-right: #733A33 2px solid;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
+  /* line 104, style.scss */
+  .list__item ul li:last-child {
+    border: none; }
