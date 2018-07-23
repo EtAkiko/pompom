@@ -1,0 +1,131 @@
+@charset "UTF-8";
+body {
+  font-size: 16px;
+  max-width: 640px;
+  width: 100%;
+  margin: 14px auto;
+  padding: 0;
+  background: #fff;
+  font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",YuGothic,'Yu Gothic',Verdana,Meiryo,sans-serif,"Font Awesome 5 Free";
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 24px;
+  font-family: "Rounded Mplus 1c";
+  background: #fff;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h1 i {
+  font-weight: normal;
+}
+
+.cp_ipselect {
+  overflow: hidden;
+  width: 90%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.cp_ipselect select {
+  width: 100%;
+  padding-right: 1em;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.cp_ipselect select::-ms-expand {
+  display: none;
+}
+
+.cp_ipselect.cp_sl04 {
+  position: relative;
+  border-radius: 2px;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  background: #ffffff;
+}
+
+.cp_ipselect.cp_sl04::before {
+  position: absolute;
+  top: 0.8em;
+  right: 0.8em;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #ccc;
+  pointer-events: none;
+}
+
+.cp_ipselect.cp_sl04 select {
+  padding: 8px 38px 8px 8px;
+  color: #333;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  margin: 10px;
+}
+
+li {
+  list-style: none;
+  padding: 8px 0 4px 10px;
+}
+
+.tabelTitle {
+  display: flex;
+  width: 100%;
+}
+
+.tabelTitle div {
+  border-top: 1px solid #ccc;
+  padding: 8px 20px;
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  margin: 20 auto;
+  border-collapse: collapse;
+  border-top: 1px solid #ccc;
+  /*td:nth-child(1) {
+    text-align: right;
+  }*/
+}
+
+table tr {
+  border-bottom: 1px solid #ccc;
+}
+
+table th, table td {
+  box-sizing: border-box;
+  padding: 8px 20px;
+  text-align: center;
+  width: 20%;
+  /* 未対応ブラウザ用フォールバック */
+  width: -webkit-calc(100% / 5);
+  width: calc(100% / 5);
+}
+
+table tbody tr:nth-child(odd) {
+  background: #f8f8f8;
+}
