@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <title>Sort</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style2.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <h1>
+      <i class="fab fa-angellist"></i>Javascriptでプルダウンを使ったソート
+      <i class="fab fa-angellist"></i>
+    </h1>
+    <div class="cp_ipselect cp_sl04">
+      <select name='Sort' id="mySort" onchange="mysort()">
+        <!--select name='Sort' id="mySort" onchange=""-->
+        <option value="nochoice">選択する</option>
+        <option value="id">ID順</option>
+        <option value="price">値段順</option>
+        <option value="name">名前順</option>
+        <option value="value">個数順</option>
+        <option value="date">日付順</option>
+        <option value="kana">ひらがな順</option>
+      </select>
+    </div>
+
+    <div class="tabelTitle">
+      <div>ID</div>
+      <div>名前</div>
+      <div>個数</div>
+      <div>値段</div>
+      <div>日付</div>
+      <div>かな</div>
+    </div>
+    <table id="list">
+      <tr>
+        <td>初期状態</td>
+      </tr>
+    </table>
+
+    <script async>
+
+      function mysort() {
+        let value = document.getElementById('mySort').value;
+        let target = document.getElementById('list');
+        let text = '';
+        if (value === 'id') {
+          items.sort(id)
+          for (i = 0; i < items.length; i++) {
+            text += '<tr>' + '<td>' + items[i]['id'] + '</td><td>' + items[i]['name'] + '</td><td>' + items[i]['value'] + '</td><td>' + items[i]['price'] + '</td><td>' + items[i]['date'] + '</td><td>'+ items[i]['kana'] + '</td>' + '</tr>';
+          };
+        }
+        else if (value === 'price') {
+          items.sort(price)
+          for (i = 0; i < items.length; i++) {
+            text += '<tr>' + '<td>' + items[i]['id'] + '</td><td>' + items[i]['name'] + '</td><td>' + items[i]['value'] + '</td><td>' + items[i]['price'] + '</td><td>' + items[i]['date'] + '</td><td>'+ items[i]['kana'] + '</td>' + '</tr>';
+          };
+        }
+        else if (value === 'name') {
+          items.sort(name)
+          for (i = 0; i < items.length; i++) {
+            text += '<tr>' + '<td>' + items[i]['id'] + '</td><td>' + items[i]['name'] + '</td><td>' + items[i]['value'] + '</td><td>' + items[i]['price'] + '</td><td>' + items[i]['date'] + '</td><td>'+ items[i]['kana'] + '</td>' + '</tr>';
+          };
+        }
+        else if (value === 'value') {
+          items.sort(values)
+          for (i = 0; i < items.length; i++) {
+            text += '<tr>' + '<td>' + items[i]['id'] + '</td><td>' + items[i]['name'] + '</td><td>' + items[i]['value'] + '</td><td>' + items[i]['price'] + '</td><td>' + items[i]['date'] + '</td><td>'+ items[i]['kana'] + '</td>' + '</tr>';
+          };
+        }
+        else if (value === 'date') {
+          items.sort(date)
+          for (i = 0; i < items.length; i++) {
+            text += '<tr>' + '<td>' + items[i]['id'] + '</td><td>' + items[i]['name'] + '</td><td>' + items[i]['value'] + '</td><td>' + items[i]['price'] + '</td><td>' + items[i]['date'] + '</td><td>'+ items[i]['kana'] + '</td>' + '</tr>';
+          };
+        }
+        else if (value === 'kana') {
+          items.sort(kana)
+          for (i = 0; i < items.length; i++) {
+            text += '<tr>' + '<td>' + items[i]['id'] + '</td><td>' + items[i]['name'] + '</td><td>' + items[i]['value'] + '</td><td>' + items[i]['price'] + '</td><td>' + items[i]['date'] + '</td><td>'+ items[i]['kana'] + '</td>' + '</tr>';
+          };
+        }
+        else if (value === 'nochoice') {
+          text = '<tr><td>初期状態</td></tr>';
+        };
+        target.innerHTML = text;
+      }
+
+      const items = [
+        {
+          id: 1,
+          name: 'fukushi',
+          kana: 'ふくし',
+          value: 1,
+          price: 400,
+          date: '2018-04-01'
+        },
+        {
+          id: 2,
+          name: 'tanabe',
+          kana: 'たなべ',
+          value: 19,
+          price: 100,
+          date: '2018-09-01'
+        },
+        {
+          id: 3,
+          name: 'yoshimura',
+          kana: 'よしむら',
+          value: 30,
+          price: 500,
+          date: '2018-02-01'
+        }
+      ];
+      //ID順に並べる
+      function id(a, b) {
+        let IdA = a.id;
+        let IdB = b.id;
+
+        let comparison = 0;
+        if (IdA > IdB) {
+          comparison = 1;
+        } else if (IdA < IdB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
+
+      //値段順に並べる
+      function price(a, b) {
+        let priceA = a.price;
+        let priceB = b.price;
+
+        let comparison = 0;
+        if (priceA > priceB) {
+          comparison = 1;
+        } else if (priceA < priceB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
+
+      //名前順に並べる
+      function name(a, b) {
+        let NameA = a.name;
+        let NameB = b.name;
+
+        let comparison = 0;
+        if (NameA > NameB) {
+          comparison = 1;
+        } else if (NameA < NameB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
+
+      //個数順に並べる
+      function values(a, b) {
+        let ValueA = a.value;
+        let ValueB = b.value;
+
+        let comparison = 0;
+        if (ValueA > ValueB) {
+          comparison = 1;
+        } else if (ValueA < ValueB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
+
+      //日付順に並べる
+      function date(a, b) {
+        let DateA = a.date;
+        let DateB = b.date;
+
+        let comparison = 0;
+        if (DateA > DateB) {
+          comparison = 1;
+        } else if (DateA < DateB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
+
+      //ひらがな順にならべる
+      function kana(a, b) {
+        let KanaA = a.kana;
+        let KanaB = b.kana;
+
+        let comparison = 0;
+        if (KanaA > KanaB) {
+          comparison = 1;
+        } else if (KanaA < KanaB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
+
+    </script>
+  </div>
+
+</body>
+
+</html>
